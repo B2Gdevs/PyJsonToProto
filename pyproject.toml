@@ -3,7 +3,7 @@ jsp = "py_json_to_proto.cli:main"
 
 [tool.poetry]
 name = "py_json_to_proto"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["benjamin garrard <benjamingarrard5279@gmail.com>"]
 license = "MIT"
 readme="README.md"
