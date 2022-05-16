@@ -10,6 +10,7 @@ google_timestamp = "google.protobuf.Timestamp";
 
 
 class Result:
+    """The result of the json to proto conversion."""
     def __init__(self, success: str, error: str) -> None:
         self._success: str = success
         self._error: str = error
@@ -19,6 +20,7 @@ class Result:
 
 
 class ProtoPrimitiveType:
+    """A model of a primitive found in a Proto."""
     def __init__(self, name: str, complex: bool = False, merge: bool = False) -> None:
         self._name: str = name
         self._complex: bool = complex
@@ -33,12 +35,14 @@ complex_proto_type = ProtoPrimitiveType(google_any, True, False);
 timestamp_proto_type = ProtoPrimitiveType(google_timestamp, False, False);
 
 class Options:
+    """Unsure."""
     def __init__(self, inline: bool, google_proto_timestamp: bool):
         self._inline = inline
         self._google_proto_timestamp = google_proto_timestamp
 
 
 class Collector:
+    """Collects messages and imports."""
     def __init__(self) -> None:
         self._imports: Set[str] = set()
         self._messages: List[List[str]]  = [['']]
@@ -60,7 +64,6 @@ class Collector:
 
     def add_message(self, lines: List[str]):
         self._messages.append(lines)
-
 
     def get_imports(self) -> Set[str]:
         return self._imports

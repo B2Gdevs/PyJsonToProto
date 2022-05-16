@@ -1,21 +1,14 @@
-[project]
-name = "PyJsonToProto"
-version = "0.0.1"
-author = "Benjamin Garrard"
-author_email = "benjamingarrard5279@gmail.com"
-description = "Convert json to python if in our supported format"
-long_description = "file: README.md"
-long_description_content_type = "text/markdown"
-
 [tool.poetry.scripts]
 jsp = "py_json_to_proto.cli:main"
 
 [tool.poetry]
 name = "py_json_to_proto"
-version = "0.1.0"
-description = ""
+version = "0.1.2"
 authors = ["benjamin garrard <benjamingarrard5279@gmail.com>"]
 license = "MIT"
+readme="README.md"
+description = "file:README.md"
+repository="https://github.com/B2Gdevs/PyJsonToProto"
 
 [tool.poetry.dependencies]
 python = "^3.6.3"

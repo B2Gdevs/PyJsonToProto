@@ -1,13 +1,39 @@
 # PyJsonToProto
 > Thanks for checking out PyJsonToProto, this is a port of https://github.com/json-to-proto/json-to-proto.github.io in to Python to be used in a number of applications using Protobufs
 
+## Installation
+> This package is published as a pip installable package.
+
+```bash
+pip install py_json_to_proto
+```
+
 ## How to use
 
 ### CLI usage
+> The CLI is the name of the project abbreviated as `jsp`.  Why? Try typing `py_json_to_proto`
+> a ton of times
+
+**HELP:**
+```bash
+usage: jsp.exe [-h] [--google_timestamp GOOGLE_TIMESTAMP] [--inline INLINE] [--input_file INPUT_FILE] [--output_file OUTPUT_FILE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --google_timestamp GOOGLE_TIMESTAMP
+                        Add timestamp to imports if in json
+  --inline INLINE       unsure...this could use a contribution
+  --input_file INPUT_FILE, -i INPUT_FILE
+                        The input file to convert
+  --output_file OUTPUT_FILE, -o OUTPUT_FILE
+                        The location to save the protos
+```
+
 
 ```bash
-python cli.py --input_file="test.json" --output_file="yolo.proto"
+jsp --input_file="test.json" --output_file="yolo.proto"
 ```
+
 
 The input file used
 `test.json`
@@ -45,7 +71,7 @@ message SomeMessage {
 > I would take a look at the cli code in `cli.py` to get a better feel.
 
 ```python
-from convert import convert, Options
+from py_json_to_proto.convert import convert, Options
 
 # Read in your json file and then convert to proto string
 with open('test.json'), 'r') as file:

@@ -20,11 +20,9 @@ def main():
     data =None
 
     if not args.input_file or not os.path.exists(args.input_file):
-        console.print(f"Invalid input file specified: [red]{args.input_file}[red]")
         raise ValueError(f"Invalid input file specified: {args.input_file}")
 
     if not args.output_file:
-        console.print(f"Invalid input file specified: [red]{args.output_file}[red]")
         raise ValueError(f"No output file name specified: {args.output_file}")
 
     with open(args.input_file, 'r') as file:
